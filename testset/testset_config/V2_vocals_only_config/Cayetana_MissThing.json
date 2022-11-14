@@ -1,0 +1,93 @@
+{
+"seg_1":{
+    "song_name":"Cayetana_MissThing",
+    "type":"duet",
+    "num_of_singers":1,
+    "num_of_voices":2,
+    "start_sec":149,
+    "end_sec":170.5,
+    "main_vocal":"Cayetana_MissThing_RAW_05_04",
+    "other_vocals":["Cayetana_MissThing_RAW_07_02"],
+    "gain_adjustment":{"Cayetana_MissThing_RAW_05_04":-6,
+                    "Cayetana_MissThing_RAW_07_02":-6
+                    }
+    },
+"seg_2":{
+    "song_name":"Cayetana_MissThing",
+    "type":"unison",
+    "num_of_singers":1,
+    "num_of_voices":2,
+    "start_sec":12.5,
+    "end_sec":27,
+    "main_vocal":"Cayetana_MissThing_RAW_05_02",
+    "other_vocals":["Cayetana_MissThing_RAW_05_03"],
+    "gain_adjustment":{"Cayetana_MissThing_RAW_05_02":-6,
+                    "Cayetana_MissThing_RAW_05_03":-6
+                    }
+    },
+"seg_3":{
+    "song_name":"Cayetana_MissThing",
+    "type":"unison",
+    "num_of_singers":1,
+    "num_of_voices":2,
+    "start_sec":33,
+    "end_sec":47,
+    "main_vocal":"Cayetana_MissThing_RAW_05_02",
+    "other_vocals":["Cayetana_MissThing_RAW_05_03"],
+    "gain_adjustment":{"Cayetana_MissThing_RAW_05_02":-6,
+                    "Cayetana_MissThing_RAW_05_03":-6
+                    }
+    },
+"seg_4":{
+    "song_name":"Cayetana_MissThing",
+    "type":"unison",
+    "num_of_singers":1,
+    "num_of_voices":2,
+    "start_sec":71,
+    "end_sec":85,
+    "main_vocal":"Cayetana_MissThing_RAW_05_02",
+    "other_vocals":["Cayetana_MissThing_RAW_05_03"],
+    "gain_adjustment":{"Cayetana_MissThing_RAW_05_02":-6,
+                    "Cayetana_MissThing_RAW_05_03":-6
+                    }
+    },
+"seg_5":{
+    "song_name":"Cayetana_MissThing",
+    "type":"unison",
+    "num_of_singers":1,
+    "num_of_voices":2,
+    "start_sec":97,
+    "end_sec":128,
+    "main_vocal":"Cayetana_MissThing_RAW_05_02",
+    "other_vocals":["Cayetana_MissThing_RAW_05_03"],
+    "gain_adjustment":{"Cayetana_MissThing_RAW_05_02":-6,
+                    "Cayetana_MissThing_RAW_05_03":-6
+                    }
+    },
+"seg_6":{
+    "song_name":"Cayetana_MissThing",
+    "type":"unison",
+    "num_of_singers":1,
+    "num_of_voices":2,
+    "start_sec":149,
+    "end_sec":176,
+    "main_vocal":"Cayetana_MissThing_RAW_05_02",
+    "other_vocals":["Cayetana_MissThing_RAW_05_03"],
+    "gain_adjustment":{"Cayetana_MissThing_RAW_05_02":-6,
+                    "Cayetana_MissThing_RAW_05_03":-6
+                    }
+    },
+"seg_7":{
+    "song_name":"Cayetana_MissThing",
+    "type":"unison",
+    "num_of_singers":1,
+    "num_of_voices":2,
+    "start_sec":188.375,
+    "end_sec":202,
+    "main_vocal":"Cayetana_MissThing_RAW_05_02",
+    "other_vocals":["Cayetana_MissThing_RAW_05_03"],
+    "gain_adjustment":{"Cayetana_MissThing_RAW_05_02":-6,
+                    "Cayetana_MissThing_RAW_05_03":-6
+                    }
+    }
+}

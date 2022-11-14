@@ -1,0 +1,28 @@
+{
+    "seg_1":{
+        "song_name":"MidnightBlue_HuntingSeason",
+        "type":"duet",
+        "num_of_singers":1,
+        "num_of_voices":2,
+        "start_sec":63,
+        "end_sec":82.5,
+        "main_vocal":"MidnightBlue_HuntingSeason_RAW_01_01",
+        "other_vocals":["MidnightBlue_HuntingSeason_RAW_02_01"],
+        "gain_adjustment":{"MidnightBlue_HuntingSeason_RAW_01_01":0,
+                        "MidnightBlue_HuntingSeason_RAW_02_01":0
+                        }
+        },
+    "seg_2":{
+        "song_name":"MidnightBlue_HuntingSeason",
+        "type":"duet",
+        "num_of_singers":1,
+        "num_of_voices":2,
+        "start_sec":193,
+        "end_sec":212.875,
+        "main_vocal":"MidnightBlue_HuntingSeason_RAW_01_01",
+        "other_vocals":["MidnightBlue_HuntingSeason_RAW_02_01"],
+        "gain_adjustment":{"MidnightBlue_HuntingSeason_RAW_01_01":0,
+                        "MidnightBlue_HuntingSeason_RAW_02_01":0
+                        }
+        }
+}

@@ -1,0 +1,12 @@
+numpy
+librosa==0.9.1
+soundfile
+torch==1.10.0+cu113
+torchaudio==0.10.0+cu113
+asteroid==0.6.1dev
+pyloudnorm
+matplotlib
+wandb
+praat-parselmouth
+fairseq
+webrtcvad
