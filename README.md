@@ -44,7 +44,7 @@ For mixture construction strategy, we have a total of 5 arguments in svs/main.py
 6. speech_speech_ratio (float) : Case 6. Ratio of 'different speech + speech’ in training data sampling process. This is not specified by arguments, but automatically calculated by ‘1 - (sum_of_rest_arguments)’. 
 
 
-### Training details
+### Training details (duet and unison)
 
 We first train the standard Conv-TasNet (for 200 epochs). 
 
@@ -64,6 +64,30 @@ python -m svs.main --exp_name=your_exp_name_iSRNet\
 --use_wandb=True --mixture_consistency=sfsrnet --srnet=convnext\
 --sr_input_res=False --train_loss_func pit_snr multi_spectral_l1 snr\
 --continual_train=True --resume=/path/to/your_exp_name
+```
+
+### Training details (main_vs_rest)
+
+Similar to duet and unison separation model, we first train the standard Conv-TasNet (for 200 epochs). You have to set different --dataset argument.
+
+```
+python -m svs.main --exp_name=your_exp_name --patience=50\
+--use_wandb=True --mixture_consistency=mixture_consistency\
+--train_loss_func pit_snr multi_spectral_l1\
+--dataset=multi_singing_librispeech
+```
+
+After that, also similar to duet and unison separation model, we start joint training of the pre-trained Conv-TasNet and the cascaded iSRNet. (for 30 epochs with argument —reduced_training_data_ratio=0.1, for more frequent validation loss checking)
+
+```
+python -m svs.main --exp_name=your_exp_name_iSRNet\
+--start_from_best=True --reduced_training_data_ratio=0.1\
+--gradient_clip=5 --lr=3e-5 --batch_size=8 --above_freq=3000\
+--epochs=230 --lr_decay_patience=6 --patience=15\
+--use_wandb=True --mixture_consistency=sfsrnet --srnet=convnext\
+--sr_input_res=False --train_loss_func pit_snr multi_spectral_l1 snr\
+--continual_train=True --resume=/path/to/your_exp_name\
+--dataset=multi_singing_librispeech
 ```
 
 ### Training dataset
