@@ -17,6 +17,7 @@ class MedleyVox(Dataset):
             * ``'unison'`` for unison vocal separation.
             * ``'duet'`` for duet vocal separation.
             * ``'main_vs_rest'`` for main vs. rest vocal separation (main vs rest).
+            * ``'n_singing'`` for N-singing separation. We will use all of the duet, unison, and main vs. rest data.
 
         sample_rate (int) : The sample rate of the sources and mixtures.
         n_src (int) : The number of sources in the mixture. Actually, this is fixed to 2 for our tasks. Need to be specified for N-singing training (future work).
@@ -37,15 +38,17 @@ class MedleyVox(Dataset):
     ):
         self.root_dir = root_dir  # /path/to/data/test_medleyDB
         self.metadata_dir = metadata_dir  # ./testset/testset_config
-        self.task = task
+        self.task = task.lower()
         self.return_id = return_id
         # Get the csv corresponding to the task
-        if task == "unison":
+        if self.task == "unison":
             self.total_segments_list = glob.glob(f"{self.root_dir}/unison/*/*")
-        elif task == "duet":
+        elif self.task == "duet":
             self.total_segments_list = glob.glob(f"{self.root_dir}/duet/*/*")
-        elif task == "main_vs_rest":
+        elif self.task == "main_vs_rest":
             self.total_segments_list = glob.glob(f"{self.root_dir}/rest/*/*")
+        elif self.task == "n_singing":
+            self.total_segments_list = glob.glob(f"{self.root_dir}/unison/*/*") + glob.glob(f"{self.root_dir}/duet/*/*") + glob.glob(f"{self.root_dir}/rest/*/*")
         self.segment = segment
         self.sample_rate = sample_rate
         self.n_src = n_src
@@ -62,7 +65,7 @@ class MedleyVox(Dataset):
         self.mixture_path = mixture_path
         sources_path_list = glob.glob(f"{self.total_segments_list[idx]}/gt/*.wav")
 
-        if self.task == "main_vs_rest":
+        if self.task == "main_vs_rest" or self.task == "n_singing":
             if os.path.exists(
                 f"{self.metadata_dir}/V1_rest_vocals_only_config/{song_name}.json"
             ):
@@ -84,7 +87,7 @@ class MedleyVox(Dataset):
         # Read sources
         sources_list = []
         ids = []
-        if self.task == "main_vs_rest":
+        if self.task == "main_vs_rest" or self.task == "n_singing":
             gt_main_name = metadata_json[segment_name]["main_vocal"]
             gt_source, sr = librosa.load(
                 f"{self.total_segments_list[idx]}/gt/{gt_main_name} - {segment_name}.wav",
@@ -106,7 +109,7 @@ class MedleyVox(Dataset):
 
             sources_list.append(gt_source)
             sources_list.append(gt_rest)
-        else:
+        else: # self.task == 'unison' or self.task == 'duet'
             for i, source_path in enumerate(sources_path_list):
                 s, sr = librosa.load(source_path, sr=self.sample_rate)
                 sources_list.append(s)

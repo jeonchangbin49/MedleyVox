@@ -217,7 +217,7 @@ if __name__ == "__main__":
         "--singing_task",
         type=str,
         default="duet",
-        help="only valid when test_target=='singing'. 'unison' or 'duet' or 'main_vs_rest'",
+        help="only valid when test_target=='singing'. 'unison' or 'duet' or 'main_vs_rest', or 'n_singing'",
     )
     parser.add_argument("--exp_name", type=str, default=None)
     parser.add_argument(
