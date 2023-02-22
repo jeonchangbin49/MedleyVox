@@ -2,6 +2,10 @@
 
 This is an official page of "MedleyVox: An Evaluation Dataset for Multiple Singing Voices Separation" submitted to ICASSP 2023.
 
+=> Accepted!
+
+A camera-ready version of the paper will be uploaded as soon as possible. Also, some of the additional experiments that our reviewers commented will be added to this page, not to the paper becuase we don't have much space left to include them and substantial changes are not allowed in this year ICASSP.
+
 [![arXiv](https://img.shields.io/badge/arXiv-2211.07302-b31b1b.svg)](https://arxiv.org/abs/2211.07302)
 [![Web](https://img.shields.io/badge/Web-Audio%20Samples-green.svg)](https://catnip-leaf-c6a.notion.site/Audio-Samples-of-MedleyVox-An-Evaluation-Dataset-for-Multiple-Singing-Voices-Separation-30074b2c88d24f46b68d9293f6095962)
 
