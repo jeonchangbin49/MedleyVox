@@ -1,21 +1,19 @@
 # MedleyVox
 
-This is an official page of "MedleyVox: An Evaluation Dataset for Multiple Singing Voices Separation" submitted to ICASSP 2023.
+This is an official page of "MedleyVox: An Evaluation Dataset for Multiple Singing Voices Separation" in ICASSP 2023.
 
-=> Accepted!
-
-A camera-ready version of the paper will be uploaded as soon as possible. Also, some of the additional experiments that our reviewers commented will be added to this page, not to the paper becuase we don't have much space left to include them and substantial changes are not allowed in this year ICASSP.
+A camera-ready version of the paper is uploaded in arXiv. Please check the icons below.
 
 [![arXiv](https://img.shields.io/badge/arXiv-2211.07302-b31b1b.svg)](https://arxiv.org/abs/2211.07302)
 [![Web](https://img.shields.io/badge/Web-Audio%20Samples-green.svg)](https://catnip-leaf-c6a.notion.site/Audio-Samples-of-MedleyVox-An-Evaluation-Dataset-for-Multiple-Singing-Voices-Separation-30074b2c88d24f46b68d9293f6095962)
 
 
-### Notes
-
-In the submitted version to ICASSP 2023, we had some mistakes on cIRM calculation and wrote some wrong statements related to that => we fixed them in arXiv preprint. Of course, we will fix them on our rebuttal phase. 
-
 ## How to obtain MedleyVox
-We are going to upload MedleyVox data on Zenodo (or other platforms) after the ICASSP review process. For now, if you want to use our data for your experiments or application developments, you can now obtain it from the metadata of MedleyVox. You first have to download MedleyDB v1 and v2 to create MedleyVox dataset, then run the following code.
+### 1) Zenodo
+Now, MedleyVox is just uploaded on Zenodo!! Please check this website (https://zenodo.org/record/7984549).
+
+### 2) If you already have MedleyDB v1 and v2
+Since we provide the metadata of MedleyVox in this code repository, you can easily obtain the MedleyVox with our code and existing MedleyDB v1 and v2. You should manually check some directory parameters in testset/testset_save code.
 
 ```
 python -m testset.testset_save
@@ -33,7 +31,7 @@ pip install git+https://github.com/asteroid-team/asteroid
 
 and other remaining packages in ‘requirements.txt’. [fairseq](https://github.com/facebookresearch/fairseq) package is not needed for training but you need to use it when you use the chunk-wise processing based on wav2vec representation. It will be introduced in the last section of this page.
 
-In svs/preprocess folder, you can find a number of preprocessing codes. For preparation of train data, almost of the codes are just simple downsampling/save processes. For preparation of validation data, you can ignore it because we already made json files of metadata for validation.
+In svs/preprocess folder, you can find a number of preprocessing codes. For the preparation of train data, most of the codes are just simple downsampling/save processes. For the preparation of validation data, you can ignore it because we already made json files of metadata for validation.
 
 ### Mixture construction strategy for training
 
